@@ -64,6 +64,12 @@ if [ $choice -eq 1 ]; then
   sudo apt install snapd -y
   sudo snap install notepad-plus-plus --classic
   echo "Notepad++ installed successfully."
+  
+  sudo snap install thincast-client
+  snap run thincast-client
+  echo "if cast application was not run then follow the below step"
+  echo "/snap/bin/thincast-client"
+  
 
   sudo apt update -y
   sudo apt upgrade -y
