@@ -1,0 +1,21 @@
+sudo apt update
+sudo apt upgrade -y
+sudo apt install -y build-essential cmake pkg-config libglib2.0-dev libgpgme-dev libgnutls28-dev uuid-dev libssh-gcrypt-dev libldap2-dev doxygen graphviz libradcli-dev libhiredis-dev libpcap-dev bison libksba-dev libsnmp-dev libgcrypt20-dev redis-server
+git clone https://github.com/greenbone/openvas.git
+cd openvas
+mkdir build
+cd build
+cmake ..
+make
+sudo make install
+sudo openvas-setup
+sudo systemctl start gvmd
+sudo systemctl start openvas-scanner
+sudo systemctl enable gvmd
+sudo systemctl enable openvas-scanner
+sudo ufw allow 80/tcp
+sudo ufw allow 443/tcp
+sudo ufw enable
+Access Web Interface:
+
+Access the OpenVAS web interface using a web browser at the URL: https://your_server_ip. You may need to accept any security warnings.
