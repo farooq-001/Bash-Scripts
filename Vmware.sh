@@ -1,27 +1,26 @@
 #!/bin/bash
 echo "Select an option:"
-echo "1. Pre-steps before installation"
-echo "2. Install Vmware-services"
+echo "1. Vmware-services package download"
+echo "2. Install Vmware-services package"
 
 read -p "Enter your choice (1 or 2): " choice
 
 if [[ $choice == 1 ]]; then
-    # Option 1: Pre-steps before installation
+    # Option 1: Vmware-services package download
  
     echo "Go to the website below and download the package:"
     echo "https://www.vmware.com/products/workstation-pro/workstation-pro-evaluation.html"
-    echo " check the Vmware version "17.0.2-21581411.x86_64" or not 
-    echo "1. Open the terminal and navigate to the Downloads folder."
-    echo "2. Right-click on the VMware file and select Properties."
-    echo "3. Navigate to the Permissions tab, check the option 'Allow executing file as program,' and close the Properties window."
-    echo "4. While still in the Downloads folder, right-click on the window and select 'Open in Terminal'."
+    echo "check the Vmware version "17.0.2-21581411.x86_64" or not 
+    echo  "once complete the 1st step you can run 2nd step"
 
 elif [[ $choice == 2 ]]; then
     # Option 2: Install Vmware-services
-
+    
+    sudo chmod -R 777 VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle
     sudo apt update
-    sudo apt install gcc build-essential
-    sudo ./VMware-Workstation-Full-17.0.2-21581411.x86_64
+    sudo apt install -y build-essential
+    sudo bash VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle
+    echo " if this step is failed to run then check wich version you have downloaded"
     sudo vmware-modconfig --console --install-all
 
 else
