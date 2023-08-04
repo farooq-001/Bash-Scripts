@@ -94,6 +94,7 @@ sudo snap remove whatsapp-for-linux
 sudo apt-get remove --purge x2goclient 
 sudo dpkg --remove vscode.deb
 sudo snap remove notepad-plus-plus
+sudo snap remove thincast-client
 
 # Cleanup
 sudo apt autoremove -y
