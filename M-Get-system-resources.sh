@@ -5,7 +5,7 @@ nodes=("node1" "node2" "node3" )
 ip_addresses=("xxxxxx" "xxxxxx " "xxxxxx" )
 
 # Define your SSH password
-password="xxxxxx"
+#password="xxxxxx"
 
 # Loop through the nodes and gather system resource information
 for ((i=0; i<${#nodes[@]}; i++)); do
