@@ -1,0 +1,3 @@
+#!/bin/bash
+conky -c /home/farooq/Documents/windgets/conkyrc_time &
+conky -c /home/farooq/Documents/windgets/Hermoso_Rc
