@@ -9,7 +9,7 @@ cat << EOF >> ~/.bashrc
 
 # Print banner
 jp2a logo.png  --color
-figlet -f slant -c "lucifer"  | lolcat
+figlet -f slant -c "Hi Thaher"  | lolcat
 figlet -f digital -c "blusapphire cyberworld"  | lolcat
 
 EOF
