@@ -10,8 +10,9 @@ if [ $choice -eq 1 ]; then
   sudo apt update -y
   sudo apt upgrade -y
   sudo apt install vim 
-  sudo apy install gimp 
-  echo "gimp-paint installed successfully."
+  sudo apt install usb-creator-gtk 
+  # usb-creator-gtk     (FOR RUN)
+  echo "Startup Disk Creator (usb-creator) installed successfully."
   
   sudo add-apt-repository ppa:achadwick/mypaint-testing
   sudo apt-get update -y
