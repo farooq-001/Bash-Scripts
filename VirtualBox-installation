@@ -23,3 +23,6 @@ sudo apt install virtualbox-7.0 -y
 rm oracle_vbox_2016.asc
 
 echo "VirtualBox 7.0 has been installed successfully."
+sleep 10
+
+sudo /sbin/vboxconfig
