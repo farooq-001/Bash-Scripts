@@ -14,6 +14,6 @@ sudo apt-get install virtualbox-6.1
 
 # Update again to refresh package lists
 sudo apt update && sudo apt upgrade -y
-echo "VirtualBox 7.0 has been installed successfully."
+echo "VirtualBox has been installed successfully."
 sleep 10
 
