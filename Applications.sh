@@ -10,14 +10,7 @@ if [ $choice -eq 1 ]; then
   sudo apt update -y
   sudo apt upgrade -y
   sudo apt install vim 
-  sudo apt install usb-creator-gtk 
-  # usb-creator-gtk     (FOR RUN)
   echo "Startup Disk Creator (usb-creator) installed successfully."
-  
-  sudo add-apt-repository ppa:achadwick/mypaint-testing
-  sudo apt-get update -y
-  sudo apt-get install mypaint 
-  echo "mypain installed successfully."
   
   wget https://zoom.us/client/latest/zoom_amd64.deb 
   sudo apt install ./zoom_amd64.deb 
@@ -43,11 +36,6 @@ if [ $choice -eq 1 ]; then
   sudo apt update
   sudo apt install brave-browser
   echo " Brave-browser installed successfully."
-
-  sudo snap install unofficial-webapp-todo 
-  sudo snap install office365webdesktop --beta
-  sudo snap install unofficial-webapp-fork 
-  echo "0365 installed successfully."
   
   sudo snap install whatsapp-for-linux 
   echo " whatsapp installed successfully."
