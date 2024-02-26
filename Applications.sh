@@ -43,6 +43,23 @@ if [ $choice -eq 1 ]; then
   sudo apt-get install x2goclient -y
   echo "X2go installed successfully."
 
+# Update and upgrade system
+sudo apt update && sudo apt upgrade -y
+
+# Download and add VirtualBox signing key to keyring
+sudo apt-get purge virtualbox*
+sudo apt-get autoremove
+sudo apt-get purge virtualbox* && sudo apt-get autoremove
+dpkg -l | grep virtualbox
+deb [arch=amd64 signed-by=/usr/share/keyrings/oracle-virtualbox-2016.gpg] https://download.virtualbox.org/virtualbox/debian <mydist> contrib
+sudo apt-get update
+sudo apt-get install virtualbox-6.1
+
+# Update again to refresh package lists
+sudo apt update && sudo apt upgrade -y
+echo "VirtualBox has been installed successfully"
+
+
   DOWNLOAD_URL="https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
   PACKAGE_NAME="vscode.deb"
   wget -O "$PACKAGE_NAME" "$DOWNLOAD_URL"
@@ -84,6 +101,9 @@ sudo apt-get remove --purge x2goclient
 sudo dpkg --remove vscode.deb
 sudo snap remove notepad-plus-plus
 sudo snap remove thincast-client
+sudo apt-get purge virtualbox*
+sudo apt-get autoremove
+sudo apt-get purge virtualbox* && sudo apt-get autoremove
 
 # Cleanup
 sudo apt autoremove -y
