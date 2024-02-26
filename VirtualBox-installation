@@ -4,25 +4,16 @@
 sudo apt update && sudo apt upgrade -y
 
 # Download and add VirtualBox signing key to keyring
-wget https://www.virtualbox.org/download/oracle_vbox_2016.asc 
-cat oracle_vbox_2016.asc | gpg --dearmor | sudo tee /usr/share/keyrings/virtualbox.gpg > /dev/null 2>&1
-
-# Add VirtualBox repository to sources.list.d
-sudo tee /etc/apt/sources.list.d/virtualbox.list <<EOF
-# add this  
-deb [arch=amd64 signed-by=/usr/share/keyrings/virtualbox.gpg] https://download.virtualbox.org/virtualbox/debian jammy contrib
-EOF
+sudo apt-get purge virtualbox*
+sudo apt-get autoremove
+sudo apt-get purge virtualbox* && sudo apt-get autoremove
+dpkg -l | grep virtualbox
+deb [arch=amd64 signed-by=/usr/share/keyrings/oracle-virtualbox-2016.gpg] https://download.virtualbox.org/virtualbox/debian <mydist> contrib
+sudo apt-get update
+sudo apt-get install virtualbox-6.1
 
 # Update again to refresh package lists
-sudo apt update
-
-# Install VirtualBox
-sudo apt install virtualbox-7.0 -y
-
-# Cleanup
-rm oracle_vbox_2016.asc
-
+sudo apt update && sudo apt upgrade -y
 echo "VirtualBox 7.0 has been installed successfully."
 sleep 10
 
-sudo /sbin/vboxconfig
