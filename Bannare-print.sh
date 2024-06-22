@@ -17,6 +17,7 @@ jp2a /home/.logo.png  --color
 export PATH="/usr/games:$PATH"
 figlet -f slant -c "Hi Lucifer"  | lolcat
 figlet -f digital -c "Well come to cyberworld"  | lolcat
+# figlet -f banner "HACKER" | cowsay -n -f daemon
 
 # cowsay "Hello 🐮👋"
 # cowsay -f ghostbusters "Hello 👻"
